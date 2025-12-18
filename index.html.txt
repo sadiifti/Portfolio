@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Sadi's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Md Sadi Iftia Khairul Ferdous Bhuiyan</h1>
+            <p>Electronics & Information Engineer | Product Manager | Developer</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a motivated Electronics and Information Engineering graduate with experience in product management, web development, and cloud technologies. I am passionate about solving real-world problems and working on innovative solutions in technology.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>BS in Electronics Information Engineering</strong>, Nanjing University of Posts and Telecommunications, 2016 - 2020</p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>Product Manager</strong>, Swiftplus Technology Co. Ltd (July 2024 - Present)</li>
+            <li><strong>Development Engineer</strong>, Shenzhen Eran Technology Co. Ltd (Dec 2023 - July 2024)</li>
+            <li><strong>International Project Delivery Engineer</strong>, Whale Cloud Technology Co. Ltd (Alibaba Cloud) (Feb 2020 - Dec 2022)</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>C++, Python, Java, JavaScript</li>
+            <li>React, Kafka, AWS, Microsoft SQL Server</li>
+            <li>Cloud Technologies, Embedded Systems, IoT</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: mdsadi95@outlook.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/md-sadi-iftia-tisakhamsa/">LinkedIn Profile</a></p>
+        <p>GitHub: <a href="https://github.com/sadiferdous">GitHub Profile</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Md Sadi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
