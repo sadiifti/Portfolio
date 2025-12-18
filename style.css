@@ -60,10 +60,13 @@ a:hover {
 footer {
     background-color: #333;
     color: white;
-    text-align: center;
+    text-align: right;  /* Aligns text to the right */
     padding: 10px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 14px;
 }
+
+
 
