@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import profilePic from "../../public/profile.jpeg";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -32,7 +33,7 @@ export function Hero() {
         className="max-w-3xl"
       >
         <Image 
-          src="/profile.jpeg" 
+          src={profilePic}
           alt="Md. Sadi Profile" 
           width={160} 
           height={160} 
