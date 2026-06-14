@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import profilePic from "../../public/profile.jpeg";
+import profilePic from "../assets/profile.jpeg";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
