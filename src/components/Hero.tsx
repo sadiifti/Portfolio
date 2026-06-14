@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
@@ -31,13 +30,12 @@ export function Hero() {
         transition={{ duration: 0.5 }}
         className="max-w-3xl"
       >
-        <Image 
-          src="/Portfolio/profile.jpeg"
+        <img 
+          src="./profile.jpeg"
           alt="Md. Sadi Profile" 
-          width={160} 
-          height={160} 
+          width="160" 
+          height="160" 
           className="rounded-full shadow-lg mb-8 border-4 border-background object-cover w-32 h-32 md:w-40 md:h-40" 
-          priority 
         />
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
           Hi, I&apos;m <span className="text-primary">Md. Sadi</span>
