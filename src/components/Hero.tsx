@@ -28,51 +28,55 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-3xl"
+        className="max-w-4xl"
       >
-        <img 
-          src="./profile.jpeg"
-          alt="Md. Sadi Profile" 
-          width="160" 
-          height="160" 
-          className="rounded-full shadow-lg mb-8 border-4 border-background object-cover w-32 h-32 md:w-40 md:h-40" 
-        />
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          Hi, I&apos;m <span className="text-primary">Md. Sadi</span>
-        </h1>
-        <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8">
-          Graduate in Electronics Information Engineering & Tech Enthusiast.
-        </h2>
-        <p className="text-lg text-muted-foreground mb-12 max-w-2xl leading-relaxed">
-          Technical Product Manager | Electronics Information Engineering Graduate | Aspiring PhD Researcher. I am passionate about building impactful FinTech solutions and leveraging my engineering background to solve real-world problems. Currently, I am focused on advancing my technical expertise through doctoral research.
-        </p>
+        <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8 md:gap-12">
+          <img 
+            src="./profile.jpeg"
+            alt="Md. Sadi Profile" 
+            width="160" 
+            height="160" 
+            className="rounded-full shadow-lg border-4 border-background object-cover w-32 h-32 md:w-48 md:h-48 shrink-0 mt-2" 
+          />
+          <div>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+              Hi, I&apos;m <span className="text-primary">Md. Sadi</span>
+            </h1>
+            <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8">
+              Graduate in Electronics Information Engineering & Tech Enthusiast.
+            </h2>
+            <p className="text-lg text-muted-foreground mb-12 max-w-2xl leading-relaxed mx-auto md:mx-0">
+              Technical Product Manager | Electronics Information Engineering Graduate | Aspiring PhD Researcher. I am passionate about building impactful FinTech solutions and leveraging my engineering background to solve real-world problems. Currently, I am focused on advancing my technical expertise through doctoral research.
+            </p>
 
-        <div className="flex gap-4">
-          <a
-            href="mailto:mdsadi95@outlook.com"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            <Mail className="mr-2 h-4 w-4" />
-            Contact Me
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mdsadiifti/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-input bg-background shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            <LinkedinIcon className="h-5 w-5" />
-            <span className="sr-only">LinkedIn</span>
-          </a>
-          <a
-            href="https://github.com/sadiifti"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-input bg-background shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            <GithubIcon className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
-          </a>
+            <div className="flex gap-4 justify-center md:justify-start">
+              <a
+                href="mailto:mdsadi95@outlook.com"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                <Mail className="mr-2 h-4 w-4" />
+                Contact Me
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mdsadiifti/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-input bg-background shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                <LinkedinIcon className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/sadiifti"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-input bg-background shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                <GithubIcon className="h-5 w-5" />
+                <span className="sr-only">GitHub</span>
+              </a>
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>
