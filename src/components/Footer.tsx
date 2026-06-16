@@ -35,7 +35,7 @@ export function Footer() {
               <Mail className="h-5 w-5" />
               <span className="sr-only">Email</span>
             </a>
-            <a href="https://sadiifti.github.io/Portfolio/" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/mdsadiifti/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <LinkedinIcon className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </a>
