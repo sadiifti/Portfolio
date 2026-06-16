@@ -51,7 +51,8 @@ const publications = [
   {
     title: "Real-Time Vehicle License Plate Detection and Recognition Using YOLOv9 and OCR Framework in Urban Traffic",
     date: "2025",
-    description: "Md. Sadi Iftia Khairul, A. F. M. Zainul Abadin, Mohammad Kamrul Hasan, Sohag Sarker."
+    description: "Md. Sadi Iftia Khairul, A. F. M. Zainul Abadin, Mohammad Kamrul Hasan, Sohag Sarker.",
+    link: "https://ieeexplore.ieee.org/document/11546179"
   },
   {
     title: "Air pollution prediction and classification with a hybrid ANN-LSTM model in modern cities: a comparative study",
@@ -107,7 +108,7 @@ export function Skills() {
                 <div key={index} className="group relative border rounded-xl p-6 hover:shadow-md transition-all bg-card text-card-foreground">
                   <div className="flex justify-between items-start mb-4 gap-4">
                     {pub.link ? (
-                      <a href={pub.link} target="_blank" rel="noreferrer" className="font-semibold text-lg leading-snug group-hover:text-primary transition-colors hover:underline">
+                      <a href={pub.link} target="_blank" rel="noopener noreferrer" className="font-semibold text-lg leading-snug group-hover:text-primary transition-colors hover:underline">
                         {pub.title}
                       </a>
                     ) : (
