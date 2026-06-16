@@ -44,8 +44,9 @@ const education = [
 const publications = [
   {
     title: "Smart Cities and Cyberattacks in Communication Networks: A Case Study of Water Treatment Plants",
-    date: "Forthcoming",
-    description: "Md. Sadi Iftia Khairul, et al."
+    date: "Published",
+    description: "Md. Sadi Iftia Khairul, et al.",
+    link: "https://www.mdpi.com/3042-4720/2/2/7"
   },
   {
     title: "Real-Time Vehicle License Plate Detection and Recognition Using YOLOv9 and OCR Framework in Urban Traffic",
@@ -105,7 +106,13 @@ export function Skills() {
               {publications.map((pub, index) => (
                 <div key={index} className="group relative border rounded-xl p-6 hover:shadow-md transition-all bg-card text-card-foreground">
                   <div className="flex justify-between items-start mb-4 gap-4">
-                    <h3 className="font-semibold text-lg leading-snug group-hover:text-primary transition-colors">{pub.title}</h3>
+                    {pub.link ? (
+                      <a href={pub.link} target="_blank" rel="noreferrer" className="font-semibold text-lg leading-snug group-hover:text-primary transition-colors hover:underline">
+                        {pub.title}
+                      </a>
+                    ) : (
+                      <h3 className="font-semibold text-lg leading-snug group-hover:text-primary transition-colors">{pub.title}</h3>
+                    )}
                     <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-md shrink-0">{pub.date}</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{pub.description}</p>
