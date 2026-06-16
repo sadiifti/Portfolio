@@ -21,7 +21,7 @@ const education = [
   {
     degree: "Chinese Language Program",
     institution: "Huzhou University, Zhejiang, China",
-    date: "2025 - 2026",
+    date: "2015 - 2016",
   },
   {
     degree: "Higher Secondary School Certificate",
