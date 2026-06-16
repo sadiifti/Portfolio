@@ -56,9 +56,9 @@ export function Hero() {
             Contact Me
           </a>
           <a
-            href="https://sadiifti.github.io/Portfolio/"
+            href="https://www.linkedin.com/in/mdsadiifti/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-input bg-background shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             <LinkedinIcon className="h-5 w-5" />
