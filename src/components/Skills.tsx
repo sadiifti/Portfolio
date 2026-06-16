@@ -57,7 +57,8 @@ const publications = [
   {
     title: "Air pollution prediction and classification with a hybrid ANN-LSTM model in modern cities: a comparative study",
     date: "2024",
-    description: "Mohammad Ariful Islam Rafi, Moshiur Rahman Sohan, Golam Jilany Rayhan, Md Sadi Iftia Khairul, et al."
+    description: "Mohammad Ariful Islam Rafi, Moshiur Rahman Sohan, Golam Jilany Rayhan, Md Sadi Iftia Khairul, et al.",
+    link: "https://ieeexplore.ieee.org/abstract/document/10916206"
   }
 ];
 
