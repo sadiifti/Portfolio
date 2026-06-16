@@ -25,7 +25,7 @@ export function Footer() {
         <div className="text-center md:text-left">
           <h3 className="font-bold text-xl mb-2">Md. Sadi</h3>
           <p className="text-muted-foreground text-sm max-w-sm">
-            Building modern web applications and exploring the possibilities of technology.
+            Driving product strategy in FinTech while pursuing advanced research in smart cities, machine learning, and secure communication networks.
           </p>
         </div>
         
