@@ -41,6 +41,22 @@ const education = [
   }
 ];
 
+const awards = [
+  {
+    title: "Nanjing Municipal Government International Students Scholarship – Jiangsu Government – Nanjing Government",
+    date: "09/09/2016",
+    description: "Received the Nanjing Municipal Scholarship for outstanding performance in the university entrance examination, recognizing academic merit and strong academic potential."
+  },
+  {
+    title: "Best Young Talent – Alibaba Cloud",
+    date: "10/02/2020"
+  },
+  {
+    title: "ZSmart BSS Product Training – Alibaba Cloud",
+    date: "17/01/2020"
+  }
+];
+
 const publications = [
   {
     title: "Smart Cities and Cyberattacks in Communication Networks: A Case Study of Water Treatment Plants",
@@ -97,6 +113,17 @@ export function Skills() {
                       {edu.websiteLabel}
                     </a>
                   )}
+                </div>
+              ))}
+            </div>
+
+            <h2 className="text-3xl font-bold tracking-tight mb-8 mt-16">Honours and Awards</h2>
+            <div className="space-y-6">
+              {awards.map((award, index) => (
+                <div key={index} className="space-y-2 border-l-2 border-muted pl-4 py-1">
+                  <h3 className="text-xl font-semibold leading-snug">{award.title}</h3>
+                  <p className="text-sm text-muted-foreground font-medium bg-muted w-fit px-2 py-0.5 rounded-md">{award.date}</p>
+                  {award.description && <p className="text-muted-foreground leading-relaxed mt-2 text-sm">{award.description}</p>}
                 </div>
               ))}
             </div>
