@@ -44,7 +44,7 @@ export function Hero() {
           Graduate in Electronics Information Engineering & Tech Enthusiast.
         </h2>
         <p className="text-lg text-muted-foreground mb-12 max-w-2xl leading-relaxed">
-          I am passionate about problem-solving and modern web development. With a strong background in technology, I enjoy exploring how engineering concepts can be applied to solve real-world problems and building high-performance applications.
+          Technical Product Manager | Electronics Information Engineering Graduate | Aspiring PhD Researcher. I am passionate about building impactful FinTech solutions and leveraging my engineering background to solve real-world problems. Currently, I am focused on advancing my technical expertise through doctoral research.
         </p>
 
         <div className="flex gap-4">
