@@ -57,6 +57,15 @@ const awards = [
   }
 ];
 
+const conferences = [
+  {
+    title: "Participator in international symposium of IKCEST under the auspices of UNESCO",
+    date: "25/10/2018 | Huzhou, Zhejiang, China",
+    description: "In 2018, I participated in the International Symposium of the International Knowledge Centre for Engineering Sciences and Technology (IKCEST), held under the auspices of UNESCO. The event brought together experts, researchers, and young professionals to discuss developments in engineering, technology, and digital innovation.",
+    link: "http://www.ikcest.org/index.htm"
+  }
+];
+
 const publications = [
   {
     title: "Smart Cities and Cyberattacks in Communication Networks: A Case Study of Water Treatment Plants",
@@ -117,16 +126,7 @@ export function Skills() {
               ))}
             </div>
 
-            <h2 className="text-3xl font-bold tracking-tight mb-8 mt-16">Honours and Awards</h2>
-            <div className="space-y-6">
-              {awards.map((award, index) => (
-                <div key={index} className="space-y-2 border-l-2 border-muted pl-4 py-1">
-                  <h3 className="text-xl font-semibold leading-snug">{award.title}</h3>
-                  <p className="text-sm text-muted-foreground font-medium bg-muted w-fit px-2 py-0.5 rounded-md">{award.date}</p>
-                  {award.description && <p className="text-muted-foreground leading-relaxed mt-2 text-sm">{award.description}</p>}
-                </div>
-              ))}
-            </div>
+
           </div>
           
           <div>
@@ -145,6 +145,38 @@ export function Skills() {
                     <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-md shrink-0">{pub.date}</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{pub.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight mb-8">Honours and Awards</h2>
+            <div className="space-y-6">
+              {awards.map((award, index) => (
+                <div key={index} className="space-y-2 border-l-2 border-muted pl-4 py-1">
+                  <h3 className="text-xl font-semibold leading-snug">{award.title}</h3>
+                  <p className="text-sm text-muted-foreground font-medium bg-muted w-fit px-2 py-0.5 rounded-md">{award.date}</p>
+                  {award.description && <p className="text-muted-foreground leading-relaxed mt-2 text-sm">{award.description}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight mb-8">Conferences and Seminars</h2>
+            <div className="space-y-6">
+              {conferences.map((conf, index) => (
+                <div key={index} className="space-y-2 border-l-2 border-muted pl-4 py-1">
+                  <h3 className="text-xl font-semibold leading-snug">{conf.title}</h3>
+                  <p className="text-sm text-muted-foreground font-medium bg-muted w-fit px-2 py-0.5 rounded-md">{conf.date}</p>
+                  {conf.description && <p className="text-muted-foreground leading-relaxed mt-2 text-sm">{conf.description}</p>}
+                  {conf.link && (
+                    <a href={conf.link} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline inline-block mt-1 font-medium">
+                      Link
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
