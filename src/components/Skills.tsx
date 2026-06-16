@@ -12,6 +12,34 @@ const skills = [
   "Digital Signal Processing",
   "IoT & Embedded Systems"
 ];
+const education = [
+  {
+    degree: "Bachelor of Science in Electronic Information Engineering",
+    institution: "Nanjing University of Posts and Telecommunications",
+    date: "09/2016 – 06/2020",
+  },
+  {
+    degree: "Chinese Language Program",
+    institution: "Huzhou University, Zhejiang, China",
+    date: "2025 - 2026",
+  },
+  {
+    degree: "Higher Secondary School Certificate",
+    institution: "Notre Dame College, Dhaka, Bangladesh",
+    date: "01/2011 – 01/2013",
+    field: "Natural sciences, mathematics and statistics",
+    website: "https://ndc.edu.bd/",
+    websiteLabel: "ndc.edu.bd"
+  },
+  {
+    degree: "Secondary School Certificate",
+    institution: "Mymensingh Zilla School",
+    date: "01/2003 – 12/2010",
+    field: "Natural sciences, mathematics and statistics",
+    website: "http://www.mzs.edu.bd/",
+    websiteLabel: "mzs.edu.bd"
+  }
+];
 
 const publications = [
   {
@@ -55,9 +83,19 @@ export function Skills() {
             </div>
             
             <h2 className="text-3xl font-bold tracking-tight mb-8 mt-16">Education</h2>
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold">Bachelor of Science in Electronic Information Engineering</h3>
-              <p className="text-muted-foreground">Nanjing University of Posts and Telecommunications (09/2016 – 06/2020)</p>
+            <div className="space-y-8">
+              {education.map((edu, index) => (
+                <div key={index} className="space-y-1">
+                  <h3 className="text-xl font-semibold leading-snug">{edu.degree}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{edu.institution} <span className="inline-block ml-1 opacity-80">({edu.date})</span></p>
+                  {edu.field && <p className="text-sm text-muted-foreground leading-relaxed">Field of study: {edu.field}</p>}
+                  {edu.website && (
+                    <a href={edu.website} target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline inline-block mt-1">
+                      {edu.websiteLabel}
+                    </a>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
           
