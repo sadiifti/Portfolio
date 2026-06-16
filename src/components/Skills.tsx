@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  "C Programming",
-  "Python",
-  "JavaScript",
-  "Full Stack Web Development",
-  "React & Next.js",
-  "CyberSecurity Forensics",
+  "Technical Product Management",
+  "Machine Learning & Computer Vision",
+  "Cybersecurity & Network Defense",
+  "IoT & Smart City Infrastructure",
+  "Python & C Programming",
+  "Full Stack (React & Next.js)",
   "Digital Signal Processing",
-  "IoT & Embedded Systems"
+  "FinTech Architecture"
 ];
 const education = [
   {
