@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { NeuralCanvas } from "@/components/NeuralCanvas";
+import { CustomCursor } from "@/components/CustomCursor";
 import { Hero } from "@/components/Hero";
 import { ImpactMetrics } from "@/components/ImpactMetrics";
 import { Publications } from "@/components/Publications";
@@ -14,6 +15,9 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans relative selection:bg-cyan-500/20 selection:text-cyan-300">
+      {/* Custom AI Precision Reticle Cursor */}
+      <CustomCursor />
+
       {/* Background Interactive Neural Canvas */}
       <NeuralCanvas />
 

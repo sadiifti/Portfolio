@@ -20,6 +20,15 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function WhatsappIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+      <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+    </svg>
+  );
+}
+
 export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -45,16 +54,25 @@ export function Footer() {
             <a
               href="mailto:mdsadi95@outlook.com"
               className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
-              aria-label="Email"
+              title="Outlook: mdsadi95@outlook.com"
             >
               <Mail className="h-4 w-4" />
+            </a>
+            <a
+              href="https://wa.me/8800016314167"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
+              title="WhatsApp: +8800016314167"
+            >
+              <WhatsappIcon className="h-4 w-4" />
             </a>
             <a
               href="https://www.linkedin.com/in/mdsadiiftia"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
-              aria-label="LinkedIn"
+              title="LinkedIn"
             >
               <LinkedinIcon className="h-4 w-4" />
             </a>
@@ -63,7 +81,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
-              aria-label="GitHub"
+              title="GitHub"
             >
               <GithubIcon className="h-4 w-4" />
             </a>
@@ -76,7 +94,7 @@ export function Footer() {
             </button>
           </div>
           <p className="text-[11px] text-slate-500 font-mono text-center md:text-right">
-            &copy; {new Date().getFullYear()} Md Sadi Iftia Khairul Ferdous Bhuiyan. Built with Next.js &amp; Tailwind CSS.
+            &copy; {new Date().getFullYear()} Md Sadi Iftia Khairul Ferdous Bhuiyan &bull; ifteferdous@gmail.com
           </p>
         </div>
       </div>

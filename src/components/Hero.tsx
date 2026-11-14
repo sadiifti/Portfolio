@@ -12,6 +12,15 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function WhatsappIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+      <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+    </svg>
+  );
+}
+
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -136,6 +145,17 @@ export function Hero() {
                   aria-label="GitHub Profile"
                 >
                   <GithubIcon className="h-5 w-5" />
+                </a>
+
+                <a
+                  href="https://wa.me/8800016314167"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-slate-800/80 transition-all"
+                  aria-label="WhatsApp Direct"
+                  title="WhatsApp: +8800016314167"
+                >
+                  <WhatsappIcon className="h-5 w-5" />
                 </a>
               </div>
             </div>

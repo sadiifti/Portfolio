@@ -36,6 +36,16 @@
     overflow-x: hidden;
   }
 
+  /* Futuristic AI Precision Crosshair Cursor */
+  @media (pointer: fine) {
+    body {
+      cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='4' fill='%2338bdf8' fill-opacity='0.9'/%3E%3Ccircle cx='12' cy='12' r='9' stroke='%2338bdf8' stroke-opacity='0.5' stroke-width='1.5' stroke-dasharray='3 3'/%3E%3C/svg%3E") 12 12, auto;
+    }
+    a, button, input, select, textarea, [role='button'], .cursor-pointer, .cursor-zoom-in {
+      cursor: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='4' fill='%2334d399'/%3E%3Ccircle cx='14' cy='14' r='11' stroke='%2334d399' stroke-width='1.5'/%3E%3Cpath d='M14 1v4M14 23v4M1 14h4M23 14h4' stroke='%2334d399' stroke-width='1.5'/%3E%3C/svg%3E") 14 14, pointer;
+    }
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
