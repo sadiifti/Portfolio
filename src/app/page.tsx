@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { ImpactMetrics } from "@/components/ImpactMetrics";
 import { Publications } from "@/components/Publications";
 import { Experience } from "@/components/Experience";
+import { Projects } from "@/components/Projects";
 import { InteractiveWidgets } from "@/components/InteractiveWidgets";
 import { SkillsSection } from "@/components/SkillsSection";
 import { LeadershipAwards } from "@/components/LeadershipAwards";
@@ -25,6 +26,7 @@ export default function Home() {
         <ImpactMetrics />
         <Publications />
         <Experience />
+        <Projects />
         <InteractiveWidgets />
         <SkillsSection />
         <LeadershipAwards />

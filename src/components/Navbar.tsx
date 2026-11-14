@@ -19,6 +19,7 @@ export function Navbar() {
     { label: "Overview", href: "#hero" },
     { label: "Research", href: "#research" },
     { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
     { label: "Interactive Demo", href: "#interactive-demo" },
     { label: "Skills", href: "#skills" },
     { label: "Leadership", href: "#leadership" },

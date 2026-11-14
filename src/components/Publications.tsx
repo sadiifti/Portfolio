@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, ExternalLink, Copy, Check, FileText, Sparkles, Filter, Layers, ArrowUpRight } from "lucide-react";
+import { BookOpen, ExternalLink, Copy, Check, FileText, Sparkles, Filter, Layers, ArrowUpRight, Image as ImageIcon } from "lucide-react";
 
 interface Publication {
   id: string;
@@ -14,6 +14,7 @@ interface Publication {
   authors: string;
   sadiRole: string;
   abstract: string;
+  image: string;
   metrics: { label: string; value: string }[];
   framework: string[];
   link?: string;
@@ -31,6 +32,7 @@ const publications: Publication[] = [
     authors: "Md Saifur Rahman, Junaid Zaman, Md Sadi Iftia Khairul, Md Rakibul Islam, Yihong Zhang",
     sadiRole: "Co-Author & Framework Architecture",
     abstract: "Engineered PACER, an innovative hybrid CNN-Transformer-DWT-TabNet diagnostic architecture for 12-lead pediatric ECG classification. Effectively captures long-range temporal dependencies and high-frequency wavelets across extensive clinical cohorts.",
+    image: "./publications/pacer-architecture.svg",
     metrics: [
       { label: "Accuracy", value: "90.93%" },
       { label: "ROC-AUC", value: "0.95" },
@@ -55,6 +57,7 @@ const publications: Publication[] = [
     authors: "AKM Ahasan Habib, Sadia Parvin Sanchita, Tanvir Mahmud, Md Sadi Iftia Khairul, Mohammad Kamrul Hasan, AFM Zainul Abadin, Thomas M.T. Lei",
     sadiRole: "Co-Author & Network Modeling",
     abstract: "Comprehensive vulnerability review of municipal Industrial IoT networks under Industry 5.0 and IEEE 1451 standards. Modeled adversarial attack vectors, physical-cyber telemetry injection, and robust defense frameworks.",
+    image: "./publications/mdpi-water-defense.svg",
     metrics: [
       { label: "Standards", value: "IEEE 1451" },
       { label: "Paradigm", value: "Industry 5.0" },
@@ -84,6 +87,7 @@ const publications: Publication[] = [
     authors: "Md Sadi Iftia Khairul, A. F. M. Zainul Abadin, Mohammad Kamrul Hasan, Sohag Sarker",
     sadiRole: "Lead Author & Deep Learning Pipeline",
     abstract: "Developed a real-time multilingual (Bangla/English) optical character recognition and license plate localization system leveraging state-of-the-art YOLOv9 with custom post-processing pipelines for high-density smart traffic surveillance.",
+    image: "./publications/yolov9-detection.svg",
     metrics: [
       { label: "Detection F1", value: "0.99" },
       { label: "Inference Speed", value: ">35 FPS" },
@@ -109,6 +113,7 @@ const publications: Publication[] = [
     authors: "Md Sadi Iftia Khairul et al.",
     sadiRole: "Author & Model Optimization",
     abstract: "Engineered a hybrid Artificial Neural Network and Long Short-Term Memory (ANN-LSTM) recurrent network trained on over 60,000 meteorological and pollutant observations to forecast PM2.5 and AQI indices with high temporal fidelity.",
+    image: "./publications/ann-lstm-aqi.svg",
     metrics: [
       { label: "Accuracy", value: "94.87%" },
       { label: "Training Data", value: "60,000+ Obs" },
@@ -129,6 +134,7 @@ const publications: Publication[] = [
 export function Publications() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedBibtex, setSelectedBibtex] = useState<{ title: string; bibtex: string } | null>(null);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
   const categories = [
@@ -157,10 +163,10 @@ export function Publications() {
             <BookOpen className="h-3.5 w-3.5" /> Peer-Reviewed Research &amp; Innovations
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Selected Publications
+            Selected Publications &amp; Model Architectures
           </h2>
           <p className="text-sm sm:text-base text-slate-400 max-w-2xl mt-2 leading-relaxed">
-            Advancing deep learning architectures across medical diagnostics, intelligent transportation, critical infrastructure defense, and environmental forecasting.
+            Advancing deep learning architectures with full architectural diagrams, benchmark evaluation metrics, and peer-reviewed citations.
           </p>
         </div>
 
@@ -183,7 +189,7 @@ export function Publications() {
       </div>
 
       {/* Publications Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filtered.map((pub) => (
           <motion.article
             key={pub.id}
@@ -192,88 +198,138 @@ export function Publications() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.3 }}
-            className="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between group hover:border-cyan-500/40 transition-all duration-300"
+            className="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all duration-300"
           >
-            <div>
-              {/* Card Header badges */}
-              <div className="flex items-center justify-between gap-2 mb-4">
-                <span className="text-[11px] font-mono font-medium px-2.5 py-1 rounded-md bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
-                  {pub.venue}
-                </span>
-                <span className="text-xs font-mono text-slate-400">
-                  {pub.year}
-                </span>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug group-hover:text-cyan-300 transition-colors">
-                {pub.title}
-              </h3>
-
-              {/* Authors */}
-              <p className="text-xs text-slate-400 mb-3 font-mono leading-relaxed">
-                {pub.authors}
-              </p>
-
-              {/* Abstract */}
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5">
-                {pub.abstract}
-              </p>
-
-              {/* Framework Tags */}
-              <div className="flex flex-wrap gap-1.5 mb-5">
-                {pub.framework.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60"
-                  >
-                    {tech}
-                  </span>
-                ))}
+            {/* Visual Figure / Photo Header */}
+            <div 
+              onClick={() => setPreviewImage(pub.image)}
+              className="relative w-full h-52 sm:h-56 bg-slate-950 overflow-hidden cursor-zoom-in border-b border-slate-800/80 group-hover:brightness-105 transition-all"
+            >
+              <img
+                src={pub.image}
+                alt={`${pub.title} Architectural Diagram`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-700/80 text-[10px] font-mono text-slate-300 backdrop-blur-md flex items-center gap-1.5">
+                <ImageIcon className="h-3 w-3 text-cyan-400" /> Click to Expand Figure
               </div>
             </div>
 
-            <div>
-              {/* Metrics Row */}
-              <div className="grid grid-cols-3 gap-2 py-3 px-3.5 rounded-xl bg-slate-900/80 border border-slate-800 mb-5">
-                {pub.metrics.map((m, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-xs sm:text-sm font-extrabold text-cyan-400">
-                      {m.value}
-                    </div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">
-                      {m.label}
-                    </div>
-                  </div>
-                ))}
+            <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+              <div>
+                {/* Card Header badges */}
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="text-[11px] font-mono font-medium px-2.5 py-1 rounded-md bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
+                    {pub.venue}
+                  </span>
+                  <span className="text-xs font-mono text-slate-400">
+                    {pub.year}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug group-hover:text-cyan-300 transition-colors">
+                  {pub.title}
+                </h3>
+
+                {/* Authors */}
+                <p className="text-xs text-slate-400 mb-3 font-mono leading-relaxed">
+                  {pub.authors}
+                </p>
+
+                {/* Abstract */}
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5">
+                  {pub.abstract}
+                </p>
+
+                {/* Framework Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {pub.framework.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                <button
-                  onClick={() => setSelectedBibtex({ title: pub.title, bibtex: pub.bibtex })}
-                  className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-300 transition-colors font-mono"
-                >
-                  <FileText className="h-3.5 w-3.5" />
-                  <span>Cite (BibTeX)</span>
-                </button>
+              <div>
+                {/* Metrics Row */}
+                <div className="grid grid-cols-3 gap-2 py-3 px-3.5 rounded-xl bg-slate-900/80 border border-slate-800 mb-5">
+                  {pub.metrics.map((m, idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="text-xs sm:text-sm font-extrabold text-cyan-400">
+                        {m.value}
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-mono truncate">
+                        {m.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-                {pub.link && (
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                {/* Action Buttons */}
+                <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                  <button
+                    onClick={() => setSelectedBibtex({ title: pub.title, bibtex: pub.bibtex })}
+                    className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-300 transition-colors font-mono"
                   >
-                    <span>Read Paper</span>
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                )}
+                    <FileText className="h-3.5 w-3.5" />
+                    <span>Cite (BibTeX)</span>
+                  </button>
+
+                  {pub.link && (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                    >
+                      <span>Read Paper</span>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </motion.article>
         ))}
       </div>
+
+      {/* Expanded Figure Modal */}
+      <AnimatePresence>
+        {previewImage && (
+          <div 
+            onClick={() => setPreviewImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-2xl relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between p-4 border-b border-slate-800">
+                <span className="text-xs font-mono text-cyan-400">Architectural Diagram &bull; Full Resolution</span>
+                <button
+                  onClick={() => setPreviewImage(null)}
+                  className="text-xs text-slate-400 hover:text-white px-2.5 py-1 rounded bg-slate-800"
+                >
+                  Close
+                </button>
+              </div>
+              <img
+                src={previewImage}
+                alt="Expanded Architectural Preview"
+                className="w-full h-auto max-h-[75vh] object-contain bg-slate-950 p-2"
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* BibTeX Modal */}
       <AnimatePresence>
