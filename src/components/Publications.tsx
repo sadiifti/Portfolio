@@ -32,7 +32,7 @@ const publications: Publication[] = [
     authors: "Md Saifur Rahman, Junaid Zaman, Md Sadi Iftia Khairul, Md Rakibul Islam, Yihong Zhang",
     sadiRole: "Co-Author & Framework Architecture",
     abstract: "Engineered PACER, an innovative hybrid CNN-Transformer-DWT-TabNet diagnostic architecture for 12-lead pediatric ECG classification. Effectively captures long-range temporal dependencies and high-frequency wavelets across extensive clinical cohorts.",
-    image: "./publications/pacer-architecture.svg",
+    image: "./publications/pacer-figure.png",
     metrics: [
       { label: "Accuracy", value: "90.93%" },
       { label: "ROC-AUC", value: "0.95" },
@@ -57,7 +57,7 @@ const publications: Publication[] = [
     authors: "AKM Ahasan Habib, Sadia Parvin Sanchita, Tanvir Mahmud, Md Sadi Iftia Khairul, Mohammad Kamrul Hasan, AFM Zainul Abadin, Thomas M.T. Lei",
     sadiRole: "Co-Author & Network Modeling",
     abstract: "Comprehensive vulnerability review of municipal Industrial IoT networks under Industry 5.0 and IEEE 1451 standards. Modeled adversarial attack vectors, physical-cyber telemetry injection, and robust defense frameworks.",
-    image: "./publications/mdpi-water-defense.svg",
+    image: "./publications/mdpi-figure.png",
     metrics: [
       { label: "Standards", value: "IEEE 1451" },
       { label: "Paradigm", value: "Industry 5.0" },
@@ -87,7 +87,7 @@ const publications: Publication[] = [
     authors: "Md Sadi Iftia Khairul, A. F. M. Zainul Abadin, Mohammad Kamrul Hasan, Sohag Sarker",
     sadiRole: "Lead Author & Deep Learning Pipeline",
     abstract: "Developed a real-time multilingual (Bangla/English) optical character recognition and license plate localization system leveraging state-of-the-art YOLOv9 with custom post-processing pipelines for high-density smart traffic surveillance.",
-    image: "./publications/yolov9-detection.svg",
+    image: "./publications/yolov9-figure.png",
     metrics: [
       { label: "Detection F1", value: "0.99" },
       { label: "Inference Speed", value: ">35 FPS" },
@@ -113,7 +113,7 @@ const publications: Publication[] = [
     authors: "Md Sadi Iftia Khairul et al.",
     sadiRole: "Author & Model Optimization",
     abstract: "Engineered a hybrid Artificial Neural Network and Long Short-Term Memory (ANN-LSTM) recurrent network trained on over 60,000 meteorological and pollutant observations to forecast PM2.5 and AQI indices with high temporal fidelity.",
-    image: "./publications/ann-lstm-aqi.svg",
+    image: "./publications/ann-lstm-figure.png",
     metrics: [
       { label: "Accuracy", value: "94.87%" },
       { label: "Training Data", value: "60,000+ Obs" },
@@ -203,15 +203,17 @@ export function Publications() {
             {/* Visual Figure / Photo Header */}
             <div 
               onClick={() => setPreviewImage(pub.image)}
-              className="relative w-full h-52 sm:h-56 bg-slate-950 overflow-hidden cursor-zoom-in border-b border-slate-800/80 group-hover:brightness-105 transition-all"
+              className="relative w-full h-56 sm:h-64 bg-slate-950 overflow-hidden cursor-zoom-in border-b border-slate-800/80 group-hover:brightness-105 transition-all p-2 flex items-center justify-center"
             >
-              <img
-                src={pub.image}
-                alt={`${pub.title} Architectural Diagram`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-700/80 text-[10px] font-mono text-slate-300 backdrop-blur-md flex items-center gap-1.5">
-                <ImageIcon className="h-3 w-3 text-cyan-400" /> Click to Expand Figure
+              <div className="w-full h-full rounded-xl bg-white/95 p-2 flex items-center justify-center overflow-hidden">
+                <img
+                  src={pub.image}
+                  alt={`${pub.title} Architectural Diagram`}
+                  className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/90 border border-slate-700 text-[10px] font-mono text-slate-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                <ImageIcon className="h-3 w-3 text-cyan-400" /> Click to Zoom
               </div>
             </div>
 
@@ -321,11 +323,13 @@ export function Publications() {
                   Close
                 </button>
               </div>
-              <img
-                src={previewImage}
-                alt="Expanded Architectural Preview"
-                className="w-full h-auto max-h-[75vh] object-contain bg-slate-950 p-2"
-              />
+              <div className="bg-white p-4 flex items-center justify-center">
+                <img
+                  src={previewImage}
+                  alt="Expanded Architectural Preview"
+                  className="w-full h-auto max-h-[75vh] object-contain"
+                />
+              </div>
             </motion.div>
           </div>
         )}
