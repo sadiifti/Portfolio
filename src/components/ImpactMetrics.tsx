@@ -50,20 +50,20 @@ export function ImpactMetrics() {
               className="glass-card rounded-2xl p-5 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300"
             >
               <div className="flex items-center justify-between mb-3">
-                <div className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-500 transition-colors">
                   <Icon className="h-5 w-5" />
                 </div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500">
                   Benchmark
                 </span>
               </div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white mb-1 tracking-tight">
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">
                 {item.value}
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-200 mb-1">
+              <div className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">
                 {item.label}
               </div>
-              <div className="text-[11px] text-slate-400 font-mono">
+              <div className="text-[11px] text-slate-600 dark:text-slate-400 font-mono">
                 {item.detail}
               </div>
             </motion.div>

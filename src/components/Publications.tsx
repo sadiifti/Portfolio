@@ -162,10 +162,10 @@ export function Publications() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono mb-3">
             <BookOpen className="h-3.5 w-3.5" /> Peer-Reviewed Research &amp; Innovations
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Selected Publications &amp; Model Architectures
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mt-2 leading-relaxed">
             Advancing deep learning architectures with full architectural diagrams, benchmark evaluation metrics, and peer-reviewed citations.
           </p>
         </div>
@@ -179,7 +179,7 @@ export function Publications() {
               className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                 activeCategory === cat.id
                   ? "bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20"
-                  : "bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800"
+                  : "bg-slate-100 dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
               }`}
             >
               {cat.label}
@@ -203,7 +203,7 @@ export function Publications() {
             {/* Visual Figure / Photo Header */}
             <div 
               onClick={() => setPreviewImage(pub.image)}
-              className="relative w-full h-56 sm:h-64 bg-slate-950 overflow-hidden cursor-zoom-in border-b border-slate-800/80 group-hover:brightness-105 transition-all p-2 flex items-center justify-center"
+              className="relative w-full h-56 sm:h-64 bg-slate-950 overflow-hidden cursor-zoom-in border-b border-slate-200 dark:border-slate-800/80 group-hover:brightness-105 transition-all p-2 flex items-center justify-center"
             >
               <div className="w-full h-full rounded-xl bg-white/95 p-2 flex items-center justify-center overflow-hidden">
                 <img
@@ -221,26 +221,26 @@ export function Publications() {
               <div>
                 {/* Card Header badges */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-[11px] font-mono font-medium px-2.5 py-1 rounded-md bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
+                  <span className="text-[11px] font-mono font-medium px-2.5 py-1 rounded-md bg-cyan-100 dark:bg-cyan-950/80 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800/60">
                     {pub.venue}
                   </span>
-                  <span className="text-xs font-mono text-slate-400">
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
                     {pub.year}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                   {pub.title}
                 </h3>
 
                 {/* Authors */}
-                <p className="text-xs text-slate-400 mb-3 font-mono leading-relaxed">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-3 font-mono leading-relaxed">
                   {pub.authors}
                 </p>
 
                 {/* Abstract */}
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5">
                   {pub.abstract}
                 </p>
 
@@ -249,7 +249,7 @@ export function Publications() {
                   {pub.framework.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60"
+                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60"
                     >
                       {tech}
                     </span>
@@ -259,13 +259,13 @@ export function Publications() {
 
               <div>
                 {/* Metrics Row */}
-                <div className="grid grid-cols-3 gap-2 py-3 px-3.5 rounded-xl bg-slate-900/80 border border-slate-800 mb-5">
+                <div className="grid grid-cols-3 gap-2 py-3 px-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 mb-5">
                   {pub.metrics.map((m, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-xs sm:text-sm font-extrabold text-cyan-400">
+                      <div className="text-xs sm:text-sm font-extrabold text-cyan-600 dark:text-cyan-400">
                         {m.value}
                       </div>
-                      <div className="text-[10px] text-slate-400 font-mono truncate">
+                      <div className="text-[10px] text-slate-600 dark:text-slate-400 font-mono truncate">
                         {m.label}
                       </div>
                     </div>
@@ -273,10 +273,10 @@ export function Publications() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                <div className="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800/80">
                   <button
                     onClick={() => setSelectedBibtex({ title: pub.title, bibtex: pub.bibtex })}
-                    className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-300 transition-colors font-mono"
+                    className="inline-flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors font-mono"
                   >
                     <FileText className="h-3.5 w-3.5" />
                     <span>Cite (BibTeX)</span>
@@ -287,7 +287,7 @@ export function Publications() {
                       href={pub.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
                     >
                       <span>Read Paper</span>
                       <ArrowUpRight className="h-4 w-4" />

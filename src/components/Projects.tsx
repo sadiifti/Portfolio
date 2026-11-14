@@ -160,10 +160,10 @@ export function Projects() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono mb-3">
             <Code2 className="h-3.5 w-3.5" /> Code &amp; Engineering Portfolio
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Featured Projects &amp; Open Source
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mt-2 leading-relaxed">
             A curation of my agentic AI tools, cybersecurity scanners, FinTech pipelines, and full-stack applications from GitHub and industry deployments.
           </p>
         </div>
@@ -177,7 +177,7 @@ export function Projects() {
               className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                 activeCategory === cat.id
                   ? "bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20"
-                  : "bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800"
+                  : "bg-slate-100 dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800"
               }`}
             >
               {cat.label}
@@ -201,29 +201,29 @@ export function Projects() {
             <div>
               {/* Header Badges */}
               <div className="flex items-center justify-between gap-2 mb-3">
-                <span className="text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-slate-800 text-cyan-300 border border-slate-700">
+                <span className="text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-cyan-700 dark:text-cyan-300 border border-slate-200 dark:border-slate-700">
                   {proj.badge}
                 </span>
-                <span className="text-[11px] font-mono text-slate-400">
+                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
                   {proj.categoryLabel}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                 {proj.title}
               </h3>
 
               {/* Description */}
-              <p className="text-xs text-slate-300 leading-relaxed mb-4">
+              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
                 {proj.description}
               </p>
 
               {/* Key Highlights */}
-              <ul className="space-y-1.5 mb-5 text-[11px] text-slate-400">
+              <ul className="space-y-1.5 mb-5 text-[11px] text-slate-600 dark:text-slate-400">
                 {proj.highlights.map((h, hIdx) => (
                   <li key={hIdx} className="flex items-start gap-1.5 leading-normal">
-                    <span className="text-cyan-400 font-bold">&rsaquo;</span>
+                    <span className="text-cyan-600 dark:text-cyan-400 font-bold">&rsaquo;</span>
                     <span>{h}</span>
                   </li>
                 ))}
@@ -232,11 +232,11 @@ export function Projects() {
 
             <div>
               {/* Tech Stack Pills */}
-              <div className="flex flex-wrap gap-1.5 mb-4 pt-3 border-t border-slate-800/80">
+              <div className="flex flex-wrap gap-1.5 mb-4 pt-3 border-t border-slate-200 dark:border-slate-800/80">
                 {proj.techStack.map((tech, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800"
+                    className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800"
                   >
                     {tech}
                   </span>
@@ -244,25 +244,25 @@ export function Projects() {
               </div>
 
               {/* Action Links */}
-              <div className="flex items-center justify-between pt-2 border-t border-slate-800/60">
+              <div className="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800/60">
                 {proj.github ? (
                   <a
                     href={proj.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs text-slate-300 hover:text-cyan-400 transition-colors font-mono"
+                    className="inline-flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-mono"
                   >
                     <GithubIcon className="h-3.5 w-3.5" />
                     <span>View Repository</span>
                   </a>
                 ) : (
-                  <span className="text-[10px] font-mono text-slate-500">Internal / Proprietary</span>
+                  <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500">Internal / Proprietary</span>
                 )}
 
                 {proj.demoUrl && (
                   <a
                     href={proj.demoUrl}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
                   >
                     <span>Try Demo</span>
                     <ExternalLink className="h-3.5 w-3.5" />

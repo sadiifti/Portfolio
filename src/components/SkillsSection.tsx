@@ -109,10 +109,10 @@ export function SkillsSection() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono mb-3">
           <Terminal className="h-3.5 w-3.5" /> Technical Competence Matrix
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Skills, Frameworks &amp; Domain Expertise
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 max-w-2xl mt-2 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mt-2 leading-relaxed">
           A rare blend of machine learning research rigour, enterprise software engineering, and mission-critical hardware deployment.
         </p>
       </div>
@@ -131,24 +131,24 @@ export function SkillsSection() {
             >
               <div>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className={`p-2.5 rounded-xl bg-slate-900 border ${cat.color}`}>
+                  <div className={`p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border ${cat.color}`}>
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-bold text-base text-white group-hover:text-cyan-300 transition-colors">
+                  <h3 className="font-bold text-base text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                     {cat.title}
                   </h3>
                 </div>
 
-                <p className="text-xs text-slate-400 leading-relaxed mb-5">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
                   {cat.description}
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-200 dark:border-slate-800/80">
                 {cat.skills.map((skill, sIdx) => (
                   <span
                     key={sIdx}
-                    className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors"
+                    className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900/90 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:text-cyan-600 dark:hover:text-white transition-colors"
                   >
                     {skill}
                   </span>

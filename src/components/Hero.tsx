@@ -52,8 +52,8 @@ export function Hero() {
   return (
     <section id="hero" className="relative min-h-[92vh] flex flex-col justify-center pt-28 pb-16">
       {/* Background radial gradient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[400px] h-[250px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-cyan-500/10 dark:bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-1/4 w-[400px] h-[250px] bg-indigo-500/10 dark:bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       <motion.div
         initial={{ opacity: 0, y: 25 }}
@@ -62,49 +62,49 @@ export function Hero() {
         className="w-full"
       >
         {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-cyan-500/30 text-cyan-300 text-xs font-medium mb-8 backdrop-blur-md glow-pill">
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-50 dark:bg-slate-900/80 border border-cyan-500/30 text-cyan-700 dark:text-cyan-300 text-xs font-medium mb-8 backdrop-blur-md glow-pill">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
           </span>
-          <span>Open for AI Research & Global Executive Collaborations</span>
+          <span>Open for AI Research &amp; Global Executive Collaborations</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Main Content Info */}
           <div className="lg:col-span-8 text-left">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4 leading-[1.1]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4 leading-[1.1]">
               Hi, I&apos;m{" "}
-              <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 via-sky-500 to-indigo-600 dark:from-cyan-400 dark:via-sky-300 dark:to-indigo-400 bg-clip-text text-transparent">
                 Md Sadi
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base font-mono text-slate-400 mb-4 tracking-wide">
+            <p className="text-sm sm:text-base font-mono text-slate-600 dark:text-slate-400 mb-4 tracking-wide">
               Md Sadi Iftia Khairul Ferdous Bhuiyan
             </p>
 
             {/* Dynamic Rotating Role */}
             <div className="h-10 mb-6 flex items-center">
-              <span className="text-xl sm:text-2xl font-semibold text-slate-200">
-                <span className="text-cyan-400">&gt; </span>
-                <span className="text-slate-100 transition-all duration-300">
+              <span className="text-xl sm:text-2xl font-semibold text-slate-800 dark:text-slate-200">
+                <span className="text-cyan-600 dark:text-cyan-400">&gt; </span>
+                <span className="text-slate-900 dark:text-slate-100 transition-all duration-300">
                   {roles[roleIndex]}
                 </span>
               </span>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl font-normal">
-              Pioneering biomedical and vision architectures (<strong className="text-white font-medium">PACER 90.93% ECG Transformer</strong>, <strong className="text-white font-medium">YOLOv9 &gt;35 FPS</strong>) while building real-world enterprise infrastructure. Serving as <strong className="text-white font-medium">COO at GLan Green Energy</strong>, <strong className="text-white font-medium">Co-Founder at Call Well</strong>, and formerly leading telecom network modernization for BTCL with <strong className="text-white font-medium">Alibaba Cloud</strong>.
+            <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-8 max-w-2xl font-normal">
+              Pioneering biomedical and vision architectures (<strong className="text-slate-900 dark:text-white font-medium">PACER 90.93% ECG Transformer</strong>, <strong className="text-slate-900 dark:text-white font-medium">YOLOv9 &gt;35 FPS</strong>) while building real-world enterprise infrastructure. Serving as <strong className="text-slate-900 dark:text-white font-medium">COO at GLan Green Energy</strong>, <strong className="text-slate-900 dark:text-white font-medium">Co-Founder at Call Well</strong>, and formerly leading telecom network modernization for BTCL with <strong className="text-slate-900 dark:text-white font-medium">Alibaba Cloud</strong>.
             </p>
 
             {/* Location & Alma Mater tags */}
-            <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 mb-8 font-mono">
-              <span className="flex items-center gap-1.5 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
-                <MapPin className="h-3.5 w-3.5 text-cyan-400" /> Shenzhen, China &bull; Dhaka, Bangladesh
+            <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-400 mb-8 font-mono">
+              <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                <MapPin className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" /> Shenzhen, China &bull; Dhaka, Bangladesh
               </span>
-              <span className="flex items-center gap-1.5 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
-                <Award className="h-3.5 w-3.5 text-indigo-400" /> B.Sc. Electronics Info Eng, NJUPT
+              <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                <Award className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" /> B.Sc. Electronics Info Eng, NJUPT
               </span>
             </div>
 
@@ -120,9 +120,9 @@ export function Hero() {
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-900/80 px-6 py-3 text-sm font-medium text-slate-200 shadow-sm transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600 active:scale-[0.98]"
+                className="inline-flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/80 px-6 py-3 text-sm font-medium text-slate-800 dark:text-slate-200 shadow-sm transition-all hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-cyan-600 dark:hover:text-white active:scale-[0.98]"
               >
-                <Mail className="mr-2 h-4 w-4 text-cyan-400" />
+                <Mail className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
                 Contact Me
               </a>
 
@@ -131,7 +131,7 @@ export function Hero() {
                   href="https://www.linkedin.com/in/mdsadiiftia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-slate-800/80 transition-all"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all shadow-sm"
                   aria-label="LinkedIn Profile"
                 >
                   <LinkedinIcon className="h-5 w-5" />
@@ -141,7 +141,7 @@ export function Hero() {
                   href="https://github.com/sadiifti"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-slate-800/80 transition-all"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all shadow-sm"
                   aria-label="GitHub Profile"
                 >
                   <GithubIcon className="h-5 w-5" />
@@ -151,7 +151,7 @@ export function Hero() {
                   href="https://wa.me/8800016314167"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-slate-800/80 transition-all"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all shadow-sm"
                   aria-label="WhatsApp Direct"
                   title="WhatsApp: +8800016314167"
                 >
@@ -167,7 +167,7 @@ export function Hero() {
               {/* Animated glowing border gradient */}
               <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-500 opacity-60 blur-lg group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="relative rounded-2xl bg-slate-900 border border-slate-800 p-3 shadow-2xl">
+              <div className="relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 shadow-2xl">
                 <div className="relative overflow-hidden rounded-xl w-64 h-80 sm:w-72 sm:h-96">
                   <img
                     src="./profile.jpeg"
