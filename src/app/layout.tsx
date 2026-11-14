@@ -1,23 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Md. Sadi | Bio",
-  description: "Portfolio of Md. Sadi Iftia Khairul Ferdous Bhuiyan, Technical Product Manager and Electronics Information Engineering Graduate.",
+  title: "Md. Sadi | AI Researcher & Technology Leader",
+  description: "Portfolio of Md Sadi Iftia Khairul Ferdous Bhuiyan - Deep Learning & CV Researcher, Co-Founder at Call Well, Board Member & COO at GLan Green Energy.",
 };
-
-import { ThemeProvider } from "@/components/theme-provider";
 
 export default function RootLayout({
   children,
@@ -25,12 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
-    >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+    <html lang="en" className="h-full antialiased dark" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-cyan-500/20 selection:text-cyan-300">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
