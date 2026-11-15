@@ -164,27 +164,22 @@ export function Hero() {
           {/* Profile Card & Avatar */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
             <div className="relative group">
-              {/* Animated glowing border gradient */}
-              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-500 opacity-60 blur-lg group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 shadow-2xl">
-                <div className="relative overflow-hidden rounded-xl w-64 h-80 sm:w-72 sm:h-96">
-                  <img
-                    src="./profile.jpeg"
-                    alt="Md Sadi Iftia"
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Subtle glass overlay at bottom */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-white font-semibold text-sm">Md Sadi Iftia</p>
-                        <p className="text-[11px] text-cyan-400">Researcher &amp; Founder</p>
-                      </div>
-                      <span className="flex items-center gap-1 text-[10px] font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 px-2 py-0.5 rounded-full">
-                        <CheckCircle className="h-3 w-3 text-emerald-400" /> Verified
-                      </span>
+              <div className="relative overflow-hidden rounded-2xl w-64 h-80 sm:w-72 sm:h-96 border border-slate-300/70 dark:border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 shadow-xl shadow-black/10 dark:shadow-black/40">
+                <img
+                  src="./profile.jpeg"
+                  alt="Md Sadi Iftia"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Subtle glass overlay at bottom */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-white font-semibold text-sm">Md Sadi Iftia</p>
+                      <p className="text-[11px] text-cyan-400">Researcher &amp; Founder</p>
                     </div>
+                    <span className="flex items-center gap-1 text-[10px] font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 px-2 py-0.5 rounded-full">
+                      <CheckCircle className="h-3 w-3 text-emerald-400" /> Verified
+                    </span>
                   </div>
                 </div>
               </div>
