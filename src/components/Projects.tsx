@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Code2, ExternalLink, Shield, Cpu, Zap, Globe, Sparkles, Terminal, Layers } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Code2, ExternalLink, Shield, Cpu, Zap, Globe, Sparkles, Terminal, Layers, Image as ImageIcon, X } from "lucide-react";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -22,6 +22,7 @@ interface ProjectItem {
   github?: string;
   demoUrl?: string;
   badge: string;
+  image: string;
 }
 
 const projects: ProjectItem[] = [
@@ -37,7 +38,8 @@ const projects: ProjectItem[] = [
     ],
     techStack: ["Python", "Sockets", "CVE API", "Multi-Threading", "Reconnaissance"],
     github: "https://github.com/sadiifti/vigilante-scanner",
-    badge: "Open Source"
+    badge: "Open Source",
+    image: "./projects/vigilante-scanner.jpg"
   },
   {
     title: "Call Well Conversational Voice Engine",
@@ -51,7 +53,8 @@ const projects: ProjectItem[] = [
     ],
     techStack: ["Agentic AI", "WebSockets", "Whisper STT", "Neural TTS", "FastAPI"],
     demoUrl: "#interactive-demo",
-    badge: "Startup Product"
+    badge: "Startup Product",
+    image: "./projects/call-well.jpg"
   },
   {
     title: "FinTech Transaction Intelligence Agent",
@@ -65,7 +68,8 @@ const projects: ProjectItem[] = [
     ],
     techStack: ["Python", "LangChain", "Payment Gateways", "REST APIs", "Vector DB"],
     github: "https://github.com/sadiifti/fintech-ai-agent",
-    badge: "FinTech AI"
+    badge: "FinTech AI",
+    image: "./projects/fintech-ai-agent.jpg"
   },
   {
     title: "AI Phishing & Threat Detector",
@@ -79,7 +83,8 @@ const projects: ProjectItem[] = [
     ],
     techStack: ["PyTorch", "Scikit-Learn", "Feature Engineering", "URL Parsing"],
     github: "https://github.com/sadiifti/ai-phishing-detector",
-    badge: "Cyber Defense"
+    badge: "Cyber Defense",
+    image: "./projects/ai-phishing-detector.jpg"
   },
   {
     title: "B2B Lead Intelligence & Enrichment Agent",
@@ -93,7 +98,8 @@ const projects: ProjectItem[] = [
     ],
     techStack: ["Python", "Playwright", "LLM Orchestration", "AsyncIO", "Enrichment"],
     github: "https://github.com/sadiifti/b2b-lead-intelligence-agent",
-    badge: "Agentic AI"
+    badge: "Agentic AI",
+    image: "./projects/b2b-lead-agent.jpg"
   },
   {
     title: "Django Enterprise CRM Platform",
@@ -107,7 +113,8 @@ const projects: ProjectItem[] = [
     ],
     techStack: ["Python", "Django", "PostgreSQL", "Tailwind CSS", "Bootstrap"],
     github: "https://github.com/sadiifti/Django-CRM",
-    badge: "Full-Stack"
+    badge: "Full-Stack",
+    image: "./projects/django-crm.jpg"
   },
   {
     title: "PickPinDrop Logistics & Geolocation",
@@ -121,7 +128,8 @@ const projects: ProjectItem[] = [
     ],
     techStack: ["JavaScript", "Leaflet", "OpenStreetMap API", "Node.js", "Express"],
     github: "https://github.com/sadiifti/pickpindrop",
-    badge: "Web App"
+    badge: "Web App",
+    image: "./projects/pickpindrop.jpg"
   },
   {
     title: "KNN Internet Traffic Classification Engine",
@@ -134,12 +142,14 @@ const projects: ProjectItem[] = [
       "Completed as Bachelor's Engineering Thesis at NJUPT."
     ],
     techStack: ["Python", "KNN", "PCAP Analysis", "Scikit-learn", "Network Info"],
-    badge: "Academic Thesis"
+    badge: "Academic Thesis",
+    image: "./projects/knn-traffic.jpg"
   }
 ];
 
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [previewImage, setPreviewImage] = useState<{ src: string; title: string } | null>(null);
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -196,21 +206,44 @@ export function Projects() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.3 }}
-            className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300 group"
+            className="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300 group"
           >
             <div>
+              {/* Visual Project Preview Image */}
+              <div 
+                onClick={() => setPreviewImage({ src: proj.image, title: proj.title })}
+                className="relative w-full h-44 sm:h-48 overflow-hidden rounded-xl mb-4 bg-slate-950 border border-slate-200 dark:border-slate-800/80 cursor-zoom-in group/img shadow-md"
+              >
+                <img
+                  src={proj.image}
+                  alt={`${proj.title} Preview`}
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/img:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Category tag overlay */}
+                <div className="absolute top-2.5 left-2.5">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-950/80 text-cyan-300 border border-slate-700/80 backdrop-blur-md font-semibold">
+                    {proj.badge}
+                  </span>
+                </div>
+
+                {/* Click to Zoom indicator */}
+                <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-950/80 border border-slate-700/80 text-[10px] font-mono text-slate-300 backdrop-blur-md flex items-center gap-1 opacity-0 group-hover/img:opacity-100 transition-opacity">
+                  <ImageIcon className="h-3 w-3 text-cyan-400" />
+                  <span>Zoom</span>
+                </div>
+              </div>
+
               {/* Header Badges */}
-              <div className="flex items-center justify-between gap-2 mb-3">
-                <span className="text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-cyan-700 dark:text-cyan-300 border border-slate-200 dark:border-slate-700">
-                  {proj.badge}
-                </span>
-                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <span className="text-[11px] font-mono font-semibold text-cyan-700 dark:text-cyan-400">
                   {proj.categoryLabel}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors leading-snug">
                 {proj.title}
               </h3>
 
@@ -250,7 +283,7 @@ export function Projects() {
                     href={proj.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-mono"
+                    className="inline-flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-mono font-medium"
                   >
                     <GithubIcon className="h-3.5 w-3.5" />
                     <span>View Repository</span>
@@ -273,6 +306,42 @@ export function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {/* Expanded Figure Modal Lightbox */}
+      <AnimatePresence>
+        {previewImage && (
+          <div 
+            onClick={() => setPreviewImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-2xl relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between p-4 border-b border-slate-800">
+                <span className="text-xs font-mono text-cyan-400 font-semibold">{previewImage.title} &bull; Architecture Preview</span>
+                <button
+                  onClick={() => setPreviewImage(null)}
+                  className="p-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                  aria-label="Close Preview"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="p-3 bg-slate-950 flex items-center justify-center max-h-[75vh] overflow-hidden">
+                <img
+                  src={previewImage.src}
+                  alt={previewImage.title}
+                  className="max-w-full max-h-[70vh] object-contain rounded-lg"
+                />
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
