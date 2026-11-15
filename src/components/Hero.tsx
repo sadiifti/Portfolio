@@ -172,7 +172,7 @@ export function Hero() {
                   <img
                     src="./profile.jpeg"
                     alt="Md Sadi Iftia"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Subtle glass overlay at bottom */}
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4">
