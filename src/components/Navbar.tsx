@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Download, Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageTranslator } from "@/components/LanguageTranslator";
+import { CvDownloadButton } from "@/components/CvDownloadButton";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -72,14 +73,9 @@ export function Navbar() {
           <LanguageTranslator />
           <ThemeToggle />
 
-          <a
-            href="./Sadi_CV.pdf"
-            download="Md_Sadi_CV.pdf"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 text-xs font-semibold text-slate-950 shadow-md shadow-cyan-500/20 hover:from-cyan-400 hover:to-blue-500 hover:shadow-cyan-500/40 transition-all hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <Download className="h-3.5 w-3.5" />
-            <span>Download CV</span>
-          </a>
+          <div className="hidden sm:block">
+            <CvDownloadButton />
+          </div>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -107,15 +103,7 @@ export function Navbar() {
               </a>
             ))}
             <div className="pt-3 border-t border-slate-200 dark:border-slate-800 mt-2">
-              <a
-                href="./Sadi_CV.pdf"
-                download="Md_Sadi_CV.pdf"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 py-2.5 text-xs font-semibold text-slate-950 shadow-md"
-              >
-                <Download className="h-4 w-4" />
-                <span>Download CV (PDF)</span>
-              </a>
+              <CvDownloadButton mobile />
             </div>
           </div>
         </div>

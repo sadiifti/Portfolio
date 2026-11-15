@@ -148,12 +148,12 @@ export function Hero() {
                 </a>
 
                 <a
-                  href="https://wa.me/8800016314167"
+                  href="https://wa.me/881631416070"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all shadow-sm"
                   aria-label="WhatsApp Direct"
-                  title="WhatsApp: +8800016314167"
+                  title="WhatsApp: +881631416070"
                 >
                   <WhatsappIcon className="h-5 w-5" />
                 </a>

@@ -23,7 +23,7 @@ const experiences: ExperienceItem[] = [
     location: "Dhaka, Bangladesh",
     period: "Sep 2026 – Present",
     badge: "Executive Leadership & CleanTech",
-    badgeColor: "bg-emerald-950/80 text-emerald-300 border-emerald-800/60",
+    badgeColor: "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800/60 font-semibold",
     highlights: [
       "Directing nationwide commercial expansion, multi-MW rooftop solar installations, and lithium-ion battery energy storage systems (BESS).",
       "Overseeing daily operations, EPC procurement, regulatory compliance, and strategic tier-1 industrial partnerships.",
@@ -37,7 +37,7 @@ const experiences: ExperienceItem[] = [
     location: "Remote / Global",
     period: "Aug 2026 – Present",
     badge: "Agentic AI & Startup",
-    badgeColor: "bg-cyan-950/80 text-cyan-300 border-cyan-800/60",
+    badgeColor: "bg-cyan-100 dark:bg-cyan-950/80 text-cyan-800 dark:text-cyan-300 border-cyan-300 dark:border-cyan-800/60 font-semibold",
     highlights: [
       "Co-founded an agentic AI voice company delivering autonomous conversational agents for enterprise client support and outreach.",
       "Architected low-latency streaming speech-to-text, LLM agentic reasoning, and natural voice synthesis pipelines.",
@@ -51,7 +51,7 @@ const experiences: ExperienceItem[] = [
     location: "Shenzhen, China",
     period: "Jul 2024 – Present",
     badge: "FinTech & Payment Gateways",
-    badgeColor: "bg-indigo-950/80 text-indigo-300 border-indigo-800/60",
+    badgeColor: "bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300 border-indigo-300 dark:border-indigo-800/60 font-semibold",
     highlights: [
       "Leading product roadmap and technical architecture for cross-border mobile payment gateways, SDKs, and enterprise REST APIs.",
       "Coordinating cross-functional engineering and security teams to implement high-throughput transaction protocols and PCI-compliant pipelines.",
@@ -65,7 +65,7 @@ const experiences: ExperienceItem[] = [
     location: "Shenzhen, China",
     period: "Dec 2023 – Jul 2024",
     badge: "Solutions Engineering",
-    badgeColor: "bg-slate-800 text-slate-300 border-slate-700",
+    badgeColor: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700 font-semibold",
     highlights: [
       "Evaluated complex client engineering requirements across international territories, tailoring hardware and software solutions.",
       "Managed client technical roadmaps and bridged communication between global clients and domestic R&D departments."
@@ -78,7 +78,7 @@ const experiences: ExperienceItem[] = [
     location: "Nanjing, China",
     period: "Oct 2019 – Dec 2022",
     badge: "Alibaba Cloud / Telecom",
-    badgeColor: "bg-sky-950/80 text-sky-300 border-sky-800/60",
+    badgeColor: "bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border-sky-300 dark:border-sky-800/60 font-semibold",
     highlights: [
       "Delivered telecommunications modernization infrastructure under the MOTN (Modernization of Telecommunications Network) project for Bangladesh Telecommunications Company Limited (BTCL).",
       "Spearheaded optical fiber FTTH deployment testing, multi-tier system verification, and network optimization.",
@@ -92,7 +92,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 relative">
       <div className="mb-14">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950/60 border border-cyan-300 dark:border-cyan-800/60 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3 font-semibold">
           <Briefcase className="h-3.5 w-3.5" /> Track Record of Execution
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
